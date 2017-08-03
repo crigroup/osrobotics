@@ -7,7 +7,7 @@
   "pluginsConfig": {
     "image-captions": {
       "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_",
-      "images": {"1": {"skip": true}}
+      "images": {"fig1.1.1": {"skip": true}}
     }
   }
 }
