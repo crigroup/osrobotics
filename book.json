@@ -1,6 +1,12 @@
 {
+  "language": "en",
   "structure": {
     "readme": "introduction.md"
   },
-  "plugins": ["youtube"]
+  "plugins": ["image-captions", "youtube"],
+  "pluginsConfig": {
+    "image-captions": {
+      "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_"
+    }
+  }
 }

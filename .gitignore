@@ -1,0 +1,6 @@
+# gitbook building folders
+_book
+node_modules
+
+# Backup files
+*~
