@@ -6,7 +6,8 @@
   "plugins": ["image-captions", "youtube"],
   "pluginsConfig": {
     "image-captions": {
-      "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_"
+      "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_",
+      "images": {"1": {"skip": true}}
     }
   }
 }
