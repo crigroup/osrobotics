@@ -6,7 +6,7 @@ The objective of this course is to equip the reader with the *scientific and
 technical* knowledge to develop advanced applications in industrial robotics.
 The main features of this course are:
 
-{% youtube src="https://www.youtube.com/watch?v=zaOy3SdvXr4" %}{% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=zaOy3SdvXr4 {% endyoutube %}
 
 1. Because robotics implies by essence the development of robotic *systems*,
 every theoretical notions we introduce will be accompanied by practical software
