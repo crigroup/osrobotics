@@ -48,5 +48,5 @@ You can now clone the course repository
 ```bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
-git clone https://github.com/quangounet/osr_course_pkgs.git
+git clone https://github.com/crigroup/osr_course_pkgs.git
 ```
