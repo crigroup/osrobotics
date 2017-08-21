@@ -1,12 +1,13 @@
 {
   "language": "en",
   "structure": {
-    "readme": "presentation.md"
+    "readme": "introduction.md"
   },
   "plugins": [
     "codeblock-label",
     "image-captions",
     "richquotes",
+    "mathjax",
     "youtube"],
   "pluginsConfig": {
     "image-captions": {
