@@ -1,12 +1,15 @@
-## Motion planning: OpenRAVE
+# Motion planning: OpenRAVE
+
 OpenRAVE is one of the most powerful existing simulation and motion planning
 environments. It is widely used in academia and industry.
 
-### OpenRAVE installation
+## OpenRAVE installation
+
 At this point, OpenRAVE has a considerable number of dependencies that have to
 be installed manually.
 
-### Dependencies
+## Dependencies
+
 You need to install the following programs:
 
 ```bash
@@ -27,7 +30,8 @@ libqhull-dev libsoqt-dev-common libsoqt4-dev libswscale-dev libtinyxml-dev    \
 libxml2-dev octomap-tools
 ```
 
-### OpenSceneGraph
+## OpenSceneGraph
+
 The version available at the Ubuntu repositories is 3.2, but OpenRAVE uses 3.4,
 so we have to build it from source:
 ```bash
@@ -40,7 +44,8 @@ make -j `nproc`
 sudo make install
 ```
 
-### FCL - The Flexible Collision Library
+## FCL - The Flexible Collision Library
+
 Build and install `fcl` version 0.5.0:
 
 ```bash
@@ -53,13 +58,15 @@ make -j `nproc`
 sudo make install
 ```
 
-### `sympy` Version
+## `sympy` Version
+
 `IKFast` requires `sympy` 0.7.1. To get this version you need to use `pip`:
 ```bash
 pip install --upgrade --user sympy==0.7.1
 ```
 
-### Build and install
+## Build and install
+
 Now you can build and install OpenRAVE:
 ```bash
 cd ~/git
@@ -71,11 +78,12 @@ make -j `nproc`
 sudo make install
 ```
 
-### Testing the installation
+## Testing the installation
+
 Let's try to run OpenRAVE with an existing environment:
 ```bash
 openrave data/lab1.env.xml
 ```
-![OpenRAVE Default Viewer](../assets/openrave_installation_testing.png)
+![OpenRAVE Default Viewer](../assets/installation/openrave_installation_testing.png)
 
 Now you should be able to try some of the [OpenRAVE examples](http://openrave.org/docs/latest_stable/examples/).

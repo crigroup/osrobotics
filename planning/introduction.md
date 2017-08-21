@@ -3,7 +3,7 @@
 # Motion planning
 
 Consider the task discussed in the Overview of this course: “pick up an
-object from a tabletop”.
+object from the tabletop”.
 
 ![Start and goal configurations.](../assets/grasping_before_after.png)
 
@@ -74,7 +74,6 @@ $$
 with $$s(0)=0$$ and $$s(T)=L$$. The function $$s$$ gives the position
 on the path for each time instant $$t$$. The path $$P$$ endowed with a
 time-parameterization becomes a *trajectory*
-
 
 $$
 \begin{array}{cccl}

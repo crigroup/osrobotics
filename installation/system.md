@@ -1,11 +1,12 @@
-## System: ROS, Gazebo
+# System: ROS, Gazebo
 
 The Robot Operating System (ROS) is a flexible framework for writing robot
 software. It is a collection of tools, libraries, and conventions that aim to
 simplify the task of creating complex and robust robot behavior across a wide
 variety of robotic platforms.
 
-### ROS installation
+## ROS installation
+
 Set-up your computer to accept software from packages.ros.org and set-up your
 keys following the steps described at http://wiki.ros.org/kinetic/Installation/Ubuntu
 
@@ -20,7 +21,7 @@ sudo rosdep init
 rosdep update
 ```
 
-#### Create a ROS workspace
+### Create a ROS workspace
 
 Let’s create a [catkin workspace](http://wiki.ros.org/catkin/workspaces)
 {% label %}command-line{% endlabel %}
@@ -57,7 +58,8 @@ This is the expected output
 /home/USERNAME/catkin_ws/src:/opt/ros/kinetic/share:/opt/ros/kinetic/stacks
 ```
 
-#### Configure your .bashrc
+### Configure your .bashrc
+
 Every time you start a new terminal, the file `~/.bashrc` will be sourced. When
 you already have an opened terminal, you can source it manually running this
 command
@@ -74,7 +76,8 @@ You can do so by running this
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 ```
 
-#### Testing the installation
+### Testing the installation
+
 Let's try to run `roscore` in a first terminal. Then, *publish* a `std_msgs/String`
 message to the topic `/some_topic_name` a second terminal. Finally, *subscribe*
 to the same topic and print it out the message in a third terminal:
@@ -93,7 +96,8 @@ For the sections where interaction with hardware components is required,
 we will simulate these components using Gazebo. More details can be found in
 the [ROS architecture section](../system/architecture.md).
 
-#### ROS packages from source
+### ROS packages from source
+
 Go to the source folder of your ROS workspace
 {% label %}command-line{% endlabel %}
 ```bash
@@ -123,7 +127,8 @@ Now compile your ROS workspace:
 cd ~/catkin_ws && catkin_make install
 ```
 
-#### Dependencies
+### Dependencies
+
 `rosdep` is very useful to install system dependencies but those dependencies
 have to be included by the ROS community, therefore few packages need to be
 install manually:
@@ -135,13 +140,15 @@ sudo apt-get install blender openscad python-rtree
 pip install control trimesh --user
 ```
 
-#### Testing the installation
+### Testing the installation
+
 Let's try visualizing the robot using [RVIZ](wiki.ros.org/rviz)
 {% label %}command-line{% endlabel %}
 ```bash
 roslaunch osr_description visualize_robot_gripper.launch
 ```
-![Robot visualization in RVIZ](../assets/denso_in_rviz.png)
+
+![Robot visualization in RVIZ.](../assets/installation/denso_in_rviz.png)
 
 Play with the sliders to see how you can move the robot. This is a simple
 visualization where nothing is actually simulated. A simple test could be to
@@ -159,7 +166,7 @@ download the models:
 >
 > `gzserver --verbose`
 
-![Robot simulation in Gazebo](../assets/denso_in_gazebo.jpg)
+![Robot simulation in Gazebo.](../assets/installation/denso_in_gazebo.jpg)
 
 > **Warning** In case of failure starting the simulation, please check the
 [system requirements for Gazebo](http://gazebosim.org/tutorials?tut=guided_b1&cat=#Systemrequirements).
@@ -169,5 +176,6 @@ parameter to false
 >
 > `roslaunch osr_gazebo robotic_setup.launch gui:=false`
 
-### To learn more about this topic
+## To learn more about this topic
+
 Take a look at the [ROS Tutorials](http://wiki.ros.org/ROS/Tutorials).

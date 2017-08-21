@@ -1,4 +1,4 @@
-## Robot simulation in Gazebo
+# Robot simulation in Gazebo
 
 The usual pipeline to make a robot move is as follows
 1. Plan a trajectory in OpenRAVE;
@@ -8,7 +8,8 @@ The usual pipeline to make a robot move is as follows
 the desired time instants, as specified by the trajectory, using its own
 control algorithms, which are usually not accessible to the end user.
 
-![Software architecture](../assets/robot_simulation_pipeline.png)
+![Robot simulation/execution
+ pipeline.](../assets/system/robot_simulation_pipeline.png)
 
 Note that it is also possible to send joint values for one time instant at a
 time. More details on this mode of operation will be given later.

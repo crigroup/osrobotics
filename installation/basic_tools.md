@@ -1,6 +1,7 @@
-## Basic tools: Ubuntu, Python, Git
+# Basic tools: Ubuntu, Python, Git
 
-### Ubuntu
+## Ubuntu
+
 1. Download [Ubuntu 16.04 Desktop](https://www.ubuntu.com/download/desktop).
 2. Create a Bootable Thumbdrive. You can use this
 [Universal USB installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)
@@ -10,7 +11,8 @@
 [installation instructions](https://www.ubuntu.com/download/desktop/install-ubuntu-desktop)
 to your specific needs.
 
-### Python
+## Python
+
 You can install python from the Ubuntu package repositories. Run the following
 commands in a terminal:
 ```bash
@@ -28,7 +30,8 @@ python -c "import scipy; print('scipy v{}'.format(scipy.__version__))"
 # scipy v0.17.0
 ```
 
-### Git
+## Git
+
 Git is sophisticated version control software. First, you should create an
 account in [GitHub](https://github.com/).
 
