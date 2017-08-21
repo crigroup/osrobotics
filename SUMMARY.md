@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](presentation.md)
-  * [Overview](introduction/overview.md)
 
 * [Installation and Setup](installation/section.md)
   * [Basic tools](installation/basic_tools.md)
@@ -12,7 +11,7 @@
 * [Manipulator kinematics](kinematics/section.md)
   * [Introduction](kinematics/introduction.md)
   * [Forward kinematics](kinematics/forward.md)
-  * [Forward kinematics](kinematics/inverse.md)
+  * [Inverse kinematics](kinematics/inverse.md)
 
 * [Motion planning](planning/section.md)
   * [Introduction](planning/introduction.md)
