@@ -5,7 +5,7 @@
 Consider the task discussed in the Overview of this course: “pick up an
 object from a tabletop”.
 
-![Start and goal configurations](../assets/grasping_before_after.png)
+![Start and goal configurations.](../assets/grasping_before_after.png)
 
 To properly grasp the object, the gripper must be placed in a
 particular position and orientation $$\bfp_\mathrm{des}$$, such as in
@@ -86,7 +86,8 @@ $$
 with $$T$$ being the duration of the trajectory. Note that the same path
 $$P$$ can give rise to many different trajectories $$\Pi$$.
 
-![A path in the configuration space](../assets/planning/path_param.png)
+![A path in the configuration
+ space.](../assets/planning/path_param.png)
 
 To solve the motion planning problem, we shall adopt the *decoupled
 planning* approach: first plan a collision-free *path* that satisfies

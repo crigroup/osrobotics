@@ -12,8 +12,8 @@ the environment.
 Consider for instance the task of sliding a pin on the surface of a
 woodblock prior to its insertion (Fig. 1).
 
-![Pin insertion](../assets/control/pin_insertion.png)
-Fig. 1: Sliding a pin on the surface of a woodblock.
+![Sliding a pin on the surface of a
+woodblock.](../assets/control/pin_insertion.png)
 
 To maintain the contact between the pin and the woodblock, the normal
 contact force (red arrow) need to be always strictly

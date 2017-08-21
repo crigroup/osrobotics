@@ -32,7 +32,8 @@ can be seen in this video:
 Now, let us consider the following task: "pick up an object from a tabletop and
 place it at another place".
 
-![Starting and grasping configurations](../assets/grasping_before_after.png)
+![Starting and grasping
+ configurations.](../assets/grasping_before_after.png)
 
 This task can be broken down into the following steps:
 

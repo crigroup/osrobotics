@@ -12,7 +12,7 @@ position/orientation
     of the drill bit must be perpendicular to the drilled surface.
 
 ![Bringing the drill bit to the desired position and orientation
-   (perpendicular to the panel)](../assets/kinematics/drill.jpg)
+   (perpendicular to the panel).](../assets/kinematics/drill.jpg)
 
 Fig. 1: Bringing the drill bit to the desired position and orientation
 (perpendicular to the panel).
