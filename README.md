@@ -46,7 +46,7 @@ source ~/.bashrc
 ### Install and configure `gitbook`
  Simply run the following command to install GitBook
 ```bash
-npm install gitbook-cli -g
+sudo npm install gitbook-cli -g
 ```
 
 ### Clone this repository
