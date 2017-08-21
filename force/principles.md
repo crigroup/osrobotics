@@ -1,5 +1,5 @@
 ## Principles of force control
-Consider a 1-DOF, linear, position-controlled robot as in Fig. 1. One would like to control the contact force f between the robot end-effector and the wall as ${f}={f}_ref$, where f_\mathrm{ref} is, for example, a constant positive value.
+Consider a 1-DOF, linear, position-controlled robot as in Fig. 1. One would like to control the contact force f between the robot end-effector and the wall as $${f}={f}_ref$$, where f_\mathrm{ref} is, for example, a constant positive value.
 ![one_dof](../assets/one_dof.png)
  
  
