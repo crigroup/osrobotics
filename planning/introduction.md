@@ -1,14 +1,11 @@
 {% include "../math.md" %}
 
+# Motion planning
 
-## Motion planning
-
-Consider a task discussed in the Overview of this course: “pick up an
+Consider the task discussed in the Overview of this course: “pick up an
 object from a tabletop”.
 
-<img src="../figures/denso.png" alt=".." style="width:80.0%" />
-
-Fig. 1: Start and goal configurations
+![Start and goal configurations](../assets/grasping_before_after.png)
 
 To properly grasp the object, the gripper must be placed in a
 particular position and orientation $$\bfp_\mathrm{des}$$, such as in
@@ -89,7 +86,7 @@ $$
 with $$T$$ being the duration of the trajectory. Note that the same path
 $$P$$ can give rise to many different trajectories $$\Pi$$.
 
-Fig. 2: A path in the configuration space
+![A path in the configuration space](../assets/planning/path_param.png)
 
 To solve the motion planning problem, we shall adopt the *decoupled
 planning* approach: first plan a collision-free *path* that satisfies
