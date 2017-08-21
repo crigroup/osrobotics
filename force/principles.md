@@ -1,7 +1,9 @@
 ## Principles of force control
-Consider a 1-DOF, linear, position-controlled robot as in Fig. 1. One would like to control the contact force f between the robot end-effector and the wall as f=f_\mathrm{ref}, where f_\mathrm{ref} is, for example, a constant positive value.
+Consider a 1-DOF, linear, position-controlled robot as in Fig. 1. One would like to control the contact force f between the robot end-effector and the wall as ${f}={f}_{ref}$, where f_\mathrm{ref} is, for example, a constant positive value.
 ![one_dof](../assets/one_dof.png)
- Fig. 1: Contact interaction between a one-dof robot and a wall.
+ 
+ 
+Fig. 1: Contact interaction between a one-dof robot and a wall.
 
 For that, one can use a Proportional-Derivative (PD) control law as in Fig. 2. Note that the command sent to the robot is x_\mathrm{com} is a desired position.
 
