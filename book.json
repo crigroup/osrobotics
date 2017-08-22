@@ -14,6 +14,9 @@
       "align": "center",
       "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_"
     },
+    "mathjax":{
+        "forceSVG": false
+    },
     "callouts":{
       "definition": {
           "alert": "info",

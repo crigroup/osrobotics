@@ -360,7 +360,7 @@ robot.SetActiveDOFValues([0.1, 0.7, 1.5, -0.5, -0.8, -1.2])
 ```
 >
 The linear Jacobian is computed by the function
-`ComputeJacobianTranslation`{.sourceCode}. This function has two
+$$\texttt{ComputeJacobianTranslation}$$. This function has two
 arguments. The first argument is the link number of the end-effector.
 Here, assume that our end-effector is the base of the gripper. To
 determine the link number, one can use
