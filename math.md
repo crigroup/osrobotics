@@ -1,15 +1,12 @@
 $$ 
 \newcommand{\d}{\mathrm{d}}
-
 \newcommand{\bfp}{\boldsymbol{p}}
 \newcommand{\bfq}{\boldsymbol{q}}
 \newcommand{\bfx}{\boldsymbol{x}}
 \newcommand{\bfu}{\boldsymbol{u}}
 \newcommand{\bfv}{\boldsymbol{v}}
-
 \newcommand{\bfJ}{\boldsymbol{J}}
 \newcommand{\bfR}{\boldsymbol{R}}
 \newcommand{\bfT}{\boldsymbol{T}}
-
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 $$

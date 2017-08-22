@@ -109,13 +109,11 @@ dimensions $$\texttt{d1=0.1, d2=0.15}$$.
    of:
 	-   $$\texttt{fk(theta1, theta2)};$$
 	-   $$\texttt{fk(theta1+delta1, theta2+delta2)};$$
-	-   $$\texttt{jacobian(theta1, theta2);}$$
-	-   $$\texttt{fk(theta1, theta2) + dot(jacobian(theta1, theta2),
-        array([delta1, delta2])).}$$
+	-   $$\texttt{jacobian(theta1, theta2)};$$
+	-   $$\texttt{fk(theta1, theta2) +}$$
+	$$\texttt{dot(jacobian(theta1, theta2), array([delta1, delta2]))}.$$
 >		
 What can you conclude?
-
-<br/> <!-- Intentional line-break to cope with markdown limitations   -->
 
 ## Forward kinematics for 3D end-effectors
 
@@ -253,22 +251,22 @@ $$\left(\begin{array}{c}
 
 Jacobian matrices for 3D end-effector can be defined in agreement with
 the above definitions of rigid body velocities. Specifically, one can
-define the Jacobian for the linear velocity as the 3xn matrix
+define the Jacobian for the linear velocity as the $$3 \times n$$ matrix
 $$\bfJ_\mathrm{lin}$$ that yields
 
 <center>
 $$\bfv = \bfJ_\mathrm{lin}(\bfq) \dot\bfq,$$
 </center>
 
-and the Jacobian for the angular velocity as the 3xn matrix
-$\bfJ_\mathrm{ang}$ that yields
+and the Jacobian for the angular velocity as the $$3 \times n$$ matrix
+$$\bfJ_\mathrm{ang}$$ that yields1
 
 <center>
 $$\mathbf{\omega} = \bfJ_\mathrm{ang}(\bfq) \dot\bfq.$$
 </center>
 
 In practice, both matrices $$\bfJ_\mathrm{lin}(\bfq)$$ and
-$$\bfJ_\mathrm{ang}(\bfq)$$ can be computed analytically from the robot
+$$\bfJ_\mathrm{ang}(\bfq)$$ can be computed from the robot
 structure.
 
 ## Forward kinematics in OpenRAVE
@@ -279,7 +277,59 @@ Forward kinematics computations are efficiently implemented in OpenRAVE.
 
 
 > #### Example::FK in OpenRAVE (transformations)
-Hello
+First, load the environment, the viewer and the robot (make sure that
+you have [installed OpenRAVE](../installation/motion_planning.md),
+[cloned the course repository](../installation/basic_tools.md#git), and 
+changed directory to $$\texttt{~/catwin_ws/src/osr_course_pkgs/}$$.
+>
+{% label %}python{% endlabel %}
+```python
+import openravepy as orpy
+env = orpy.Environment()
+env.Load('osr_openrave/robots/denso_robotiq_85_gripper.robot.xml')
+env.SetDefaultViewer()
+robot = env.GetRobot('denso_robotiq_85_gripper')
+manipulator = robot.SetActiveManipulator('gripper')
+robot.SetActiveDOFs(manipulator.GetArmIndices())
+```
+>
+Now, set the joint angles of the robot to the desired values and print
+out the manipulator transforms corresponding to those joint angle
+values.
+>
+{% label %}python{% endlabel %}
+```python
+robot.SetActiveDOFValues([0.1, 0.7, 1.5, -0.5, -0.8, -1.2])
+print manipulator.GetEndEffectorTransform()
+```
+>
+{% label %}output{% endlabel %}
+```
+[[ 0.1017798  -0.43477328  0.89476984  0.63417832]
+ [ 0.01692568  0.90006731  0.43542206  0.13759824]
+ [-0.99466296 -0.02917258  0.0989675   0.43099054]
+ [ 0.          0.          0.          1.        ]]
+```
+>
+{% label %}python{% endlabel %}
+```python
+robot.SetActiveDOFValues([0.8, -0.4, 1.5, -0.5, -0.8, -1.2])
+print manipulator.GetEndEffectorTransform()
+```
+>
+{% label %}output{% endlabel %}
+```
+[[ 0.64534243 -0.76378161 -0.01306916  0.09756635]
+ [ 0.67405755  0.56131544  0.48017851  0.20609597]
+ [-0.3594156  -0.31868893  0.87707343  0.95860823]
+ [ 0.          0.          0.          1.        ]]
+```
+>
+![OpenRAVE view at configuration [0.8, -0.4, 1.5, -0.5, -0.8,
+-1.2].](../assets/kinematics/fk_openrave.png)
+>
+Note that the robot configuration in the viewer is updated in real
+time after each $$\texttt{SetActiveDOFValues}$$ call.
 
 
 
@@ -287,10 +337,121 @@ Hello
 
 
 > #### Example::FK in OpenRAVE (Jacobians)
-Hello
+First, load the environment, the viewer and the Denso robot
+>
+{% label %}python{% endlabel %}
+```python
+import openravepy as orpy
+>
+env = orpy.Environment()
+env.Load('robots/denso_robotiq_85_gripper.robot.xml')
+env.SetDefaultViewer()
+robot = env.GetRobot('denso_robotiq_85_gripper')
+manipulator = robot.SetActiveManipulator('gripper')
+robot.SetActiveDOFs(manipulator.GetArmIndices())
+```
+>
+As the Jacobians depend on the joint angles, one must first set the
+joint angles of the robot to the desired values.
+>
+{% label %}python{% endlabel %}
+```python
+robot.SetActiveDOFValues([0.1, 0.7, 1.5, -0.5, -0.8, -1.2])
+```
+>
+The linear Jacobian is computed by the function
+`ComputeJacobianTranslation`{.sourceCode}. This function has two
+arguments. The first argument is the link number of the end-effector.
+Here, assume that our end-effector is the base of the gripper. To
+determine the link number, one can use
+>
+{% label %}python{% endlabel %}
+```python
+robot.GetLinks()
+```
+>
+{% label %}output{% endlabel %}
+```
+[RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('link0'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('link1'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('link2'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('link3'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('link4'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('link5'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('link6'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_coupler'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_85_base_link'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_85_left_knuckle_link'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_85_right_knuckle_link'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_85_left_finger_link'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_85_right_finger_link'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_85_left_inner_knuckle_link'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_85_right_inner_knuckle_link'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_85_left_finger_tip_link'),
+ RaveGetEnvironment(1).GetKinBody('denso_robotiq_85_gripper').GetLink('robotiq_85_right_finger_tip_link')]
+```
+>
+Thus, the gripper base link ($$\texttt{robotiq_85_base_link}$$) is
+link number 8.
+>
+The second argument of $$\texttt{ComputeJacobianTranslation}$$ is
+the position in the laboratory frame of the reference point $$P$$ on the
+rigid body we mentioned previously. One can choose $$P$$ to be for
+instance the origin of the link frame.
+>
+Putting everything together, we obtain the following code
+>
+{% label %}python{% endlabel %}
+```python
+link_idx = [l.GetName() for l in robot.GetLinks()].index('robotiq_85_base_link')
+link_origin = robot.GetLink('robotiq_85_base_link').GetTransform()[:3,3]
+# Improve the visualization settings
+import numpy as np
+np.set_printoptions(precision=6, suppress=True)
+# Print the result
+print robot.ComputeJacobianTranslation(link_idx, link_origin)
+```
+>
+{% label %}output{% endlabel %}
+```
+[[-0.076639  0.071775 -0.160337  0.019553  0.018678 -0.        0.      ]
+ [ 0.508911  0.007201 -0.016087 -0.044858 -0.022967  0.        0.      ]
+ [ 0.       -0.514019 -0.317533  0.020576 -0.067821 -0.        0.      ]]
+```
+>
+The angular Jacobian is computed by the function
+$$\texttt{ComputeJacobianAxisAngle}$$. This function has one
+argument: the link number of the end-effector.
+>
+{% label %}python{% endlabel %}
+```python
+print robot.ComputeJacobianAxisAngle(link_idx)
+```
+>
+{% label %}output{% endlabel %}
+```
+[[ 0.       -0.099833 -0.099833  0.804457 -0.368345  0.89477   0.      ]
+ [-0.        0.995004  0.995004  0.080715  0.845031  0.435422  0.      ]
+ [ 1.        0.        0.       -0.588501 -0.387614  0.098967  0.      ]]
+```
 
 ### Exercise
 
 > #### Exercise::FK in OpenRAVE
-Hello
-
+Consider the same Denso robot as previously. Assume that at time
+$$t_1$$, we have:
+>
+- $$\texttt{q1 = [-0.1, 1.8, 1.0, 0.5, 0.2, 1.3]};$$
+- $$\texttt{qdot1 = [1.2, -0.7, -1.5, -0.5, 0.8, -1.5]};$$
+- $$\texttt{delta_t = 0.1}.$$
+>
+Questions:
+>
+1. Compute the transformation matrix of the
+   $$\texttt{robotiq_85_base_link}$$ at configurations
+   $$\texttt{q1}$$ and $$\texttt{q1 + delta_t*qdot1}$$.
+2. Compute the linear and angular Jacobians of the
+   $$\texttt{robotiq_85_base_link}$$ at time $$t_1$$.
+3. Using these Jacobians, compute another approximation of the
+   transformation matrix of the $$\texttt{robotiq_85_base_link}$$
+   at time $$\texttt{q_1 + delta_t*qdot_1}$$.

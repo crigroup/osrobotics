@@ -40,8 +40,8 @@ further, we need some definitions.
 The subset of $$\mathcal{C}$$ that consists of joint angles values
 $$\bfq$$ where the robot collides with the environment or with itself
 is called the *obstacle space* and denoted
-$$\mathcal{C}_\mathrm{free}$$. The complement of
-$$\mathcal{C}_\mathrm{free}$$ is called the *free space* and denoted
+$$\mathcal{C}_\mathrm{obs}$$. The complement of
+$$\mathcal{C}_\mathrm{obs}$$ is called the *free space* and denoted
 $$\mathcal{C}_\mathrm{free}$$.
 
 <br/> <!-- Intentional line-break to cope with markdown limitations   -->
