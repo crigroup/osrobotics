@@ -13,10 +13,7 @@
     "image-captions": {
       "align": "center",
       "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_"
-    },
-    "richquotes": {
-			"default": false
-		}
+    }
   },
   "styles": {
     "website": "styles/website.css"
