@@ -159,8 +159,8 @@ Finally, check that you can run the gazebo simulation:
 ```bash
 roslaunch osr_gazebo robotic_setup.launch
 ```
-
-> **Note** The first time you run gazebo, it will download several models
+> #### Info::Gazebo takes for ever loading
+The first time you run gazebo, it will download several models
 available online. You may want to start first gazebo alone and give it time to
 download the models:
 >
@@ -168,7 +168,8 @@ download the models:
 
 ![Robot simulation in Gazebo.](../assets/installation/denso_in_gazebo.jpg)
 
-> **Warning** In case of failure starting the simulation, please check the
+> #### Warning
+In case of failure starting the simulation, please check the
 [system requirements for Gazebo](http://gazebosim.org/tutorials?tut=guided_b1&cat=#Systemrequirements).
 If your computer doesn't have a dedicated video card, it's likely that you
 won't be able to run the graphical interface. Try again setting the `gui`

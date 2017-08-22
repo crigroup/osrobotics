@@ -11,7 +11,7 @@ be installed manually.
 ## Dependencies
 
 You need to install the following programs:
-
+{% label %}command-line{% endlabel %}
 ```bash
 sudo apt-get install build-essential cmake doxygen g++ git ipython octave     \
 python-dev python-h5py python-numpy python-pip python-scipy qt5-default       \
@@ -20,7 +20,7 @@ minizip
 
 Next, you will need to install the following libraries, which are available
 from the Ubuntu package repositories:
-
+{% label %}command-line{% endlabel %}
 ```bash
 sudo apt-get install ann-tools cmake libann-dev libassimp-dev libavcodec-dev  \
 libavformat-dev libboost-python-dev libboost-all-dev libccd-dev               \
@@ -34,6 +34,7 @@ libxml2-dev octomap-tools
 
 The version available at the Ubuntu repositories is 3.2, but OpenRAVE uses 3.4,
 so we have to build it from source:
+{% label %}command-line{% endlabel %}
 ```bash
 cd ~/git
 git clone https://github.com/openscenegraph/OpenSceneGraph.git --branch OpenSceneGraph-3.4
@@ -47,7 +48,7 @@ sudo make install
 ## FCL - The Flexible Collision Library
 
 Build and install `fcl` version 0.5.0:
-
+{% label %}command-line{% endlabel %}
 ```bash
 mkdir -p ~/git; cd ~/git
 git clone https://github.com/flexible-collision-library/fcl
@@ -61,6 +62,7 @@ sudo make install
 ## `sympy` Version
 
 `IKFast` requires `sympy` 0.7.1. To get this version you need to use `pip`:
+{% label %}command-line{% endlabel %}
 ```bash
 pip install --upgrade --user sympy==0.7.1
 ```
@@ -68,6 +70,7 @@ pip install --upgrade --user sympy==0.7.1
 ## Build and install
 
 Now you can build and install OpenRAVE:
+{% label %}command-line{% endlabel %}
 ```bash
 cd ~/git
 git clone https://github.com/rdiankov/openrave.git
@@ -81,6 +84,7 @@ sudo make install
 ## Testing the installation
 
 Let's try to run OpenRAVE with an existing environment:
+{% label %}command-line{% endlabel %}
 ```bash
 openrave data/lab1.env.xml
 ```

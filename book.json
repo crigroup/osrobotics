@@ -4,15 +4,21 @@
     "readme": "introduction.md"
   },
   "plugins": [
+    "callouts",
     "codeblock-label",
     "image-captions",
-    "richquotes",
     "mathjax",
     "youtube"],
   "pluginsConfig": {
     "image-captions": {
       "align": "center",
       "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_"
+    },
+    "callouts":{
+      "definition": {
+          "alert": "info",
+          "picto": "fa-pencil-square-o"
+      }
     }
   },
   "styles": {
