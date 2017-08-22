@@ -82,7 +82,7 @@ $$
 >
 with $$T$$ being the duration of the trajectory. Note that the same path
 $$P$$ can give rise to many different trajectories $$\Pi$$.
-
+>
 ![A path in the configuration
  space.](../assets/planning/path_param.png)
 

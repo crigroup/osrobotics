@@ -18,6 +18,14 @@
       "definition": {
           "alert": "info",
           "picto": "fa-pencil-square-o"
+      },
+      "example": {
+          "alert": "success",
+          "picto": "fa-key"
+      },
+      "exercise": {
+          "alert": "warning",
+          "picto": "fa-question-circle-o"
       }
     }
   },
