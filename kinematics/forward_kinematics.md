@@ -175,7 +175,7 @@ $$_\mathrm{Lab}\bfT^\mathrm{Box} = {_\mathrm{Lab}\bfT^\mathrm{Gri}}
 \cdot {_\mathrm{Gri}\bfT^\mathrm{Box}}.$$ 
 </center>
 
-### Rigid body velocities
+### Rigid-body velocities
 
 The velocity of a rigid body has two components: linear and angular.
 Consider again the *orthonormal frame* $$(P,\bfu_0,\bfu_1,\bfu_2)$$
@@ -208,10 +208,10 @@ $$\bfv_Q = \bfv + \bfomega \times \overrightarrow{PQ}.$$
 </center>
 
 
-#### Relationship between rigid body velocities and transformation matrices
+#### Relationship between rigid-body velocities and transformation matrices
 
 Let us now clarify the relationship between (a) the above definitions of
-rigid body velocities and (b) the transformation matrices that represent
+rigid-body velocities and (b) the transformation matrices that represent
 the positions/orientations of rigid bodies.
 
 Assume that at time $$t_1$$, the rigid body is at transformation
@@ -250,16 +250,16 @@ $$\left(\begin{array}{c}
 ### Linear and angular Jacobians
 
 Jacobian matrices for 3D end-effector can be defined in agreement with
-the above definitions of rigid body velocities. Specifically, one can
+the above definitions of rigid-body velocities. Specifically, one can
 define the Jacobian for the linear velocity as the $$3 \times n$$ matrix
-$$\bfJ_\mathrm{lin}$$ that yields
+$$\bfJ_\mathrm{lin}$$ that yields:
 
 <center>
 $$\bfv = \bfJ_\mathrm{lin}(\bfq) \dot\bfq,$$
 </center>
 
 and the Jacobian for the angular velocity as the $$3 \times n$$ matrix
-$$\bfJ_\mathrm{ang}$$ that yields1
+$$\bfJ_\mathrm{ang}$$ that yields:
 
 <center>
 $$\mathbf{\omega} = \bfJ_\mathrm{ang}(\bfq) \dot\bfq.$$

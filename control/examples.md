@@ -1,1 +1,1 @@
-## Examples: hybrid control and impedance control
+# Examples: hybrid control and impedance control
