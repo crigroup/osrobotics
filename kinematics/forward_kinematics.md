@@ -455,3 +455,13 @@ Questions:
 3. Using these Jacobians, compute another approximation of the
    transformation matrix of the $$\texttt{robotiq_85_base_link}$$
    at time $$\texttt{q_1 + delta_t*qdot_1}$$.
+
+
+# To learn more about this topic
+
+See Chapters 4 and 5 of
+
+Lynch, K. M., & Park, F. C. (2017). *Modern Robotics: Mechanics,
+Planning, and Control*. Cambridge University Press. Available at
+http://modernrobotics.org
+
