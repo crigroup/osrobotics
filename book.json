@@ -5,6 +5,7 @@
   },
   "plugins": [
     "callouts",
+    "highlight",
     "codeblock-label",
     "image-captions",
     "mathjax",
