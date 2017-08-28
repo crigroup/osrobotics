@@ -1,3 +1,5 @@
+{% include "../math.md" %}
+
 # Motion planning assignment
 
 Prerequisites: Chapters 1, 2, 3.
@@ -74,7 +76,7 @@ the blue destination bays. The sequence of motions is as follows:
     long edges of the box);
 2.  Grab the box, using the OpenRAVE function $$\texttt{Grab}$$, see
     Section [Inverse
-    kinematics](inverse_kinematics.md#velocity-space-ik). You are
+    kinematics](../kinematics/inverse_kinematics.md#velocity-space-ik). You are
     not required to close the gripper;
 3.  Move the box towards one of the blue destination bays and release
     the grasp. Note that the green boxes must be piled up on top of

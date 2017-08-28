@@ -1,3 +1,5 @@
+{% include "../math.md" %}
+
 # System: ROS, Gazebo
 
 The Robot Operating System (ROS) is a flexible framework for writing robot
@@ -31,15 +33,15 @@ cd ~/catkin_ws/src
 catkin_init_workspace
 ```
 
-Even though the workspace is empty (there are no packages in the `src` folder,
-just a single `CMakeLists.txt` symbolic link) you can still build the workspace
+Even though the workspace is empty (there are no packages in the $$\texttt{src}$$ folder,
+just a single $$\texttt{CMakeLists.txt}$$ symbolic link) you can still build the workspace
 {% label %}command-line{% endlabel %}
 ```bash
 cd ~/catkin_ws/
 catkin_make
 ```
 
-Before continuing, source your workspace `setup.bash` file
+Before continuing, source your workspace $$\texttt{setup.bash}$$ file
 {% label %}command-line{% endlabel %}
 ```bash
 source ~/catkin_ws/devel/setup.bash
@@ -78,8 +80,8 @@ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 ### Testing the installation
 
-Let's try to run `roscore` in a first terminal. Then, *publish* a `std_msgs/String`
-message to the topic `/some_topic_name` a second terminal. Finally, *subscribe*
+Let's try to run $$\texttt{roscore}$$ in a first terminal. Then, publish a $$\texttt{std_msgs/String}$$
+message to the topic $$\texttt{/some_topic_name}$$ a second terminal. Finally, subscribe
 to the same topic and print it out the message in a third terminal:
 {% label %}command-line{% endlabel %}
 ```bash
@@ -106,7 +108,7 @@ cd ~/catkin_ws/src
 
 Make sure that you have [cloned the course repository](../installation/basic_tools.md#git).
 
-Now, use the `wstool` to install required packages from source repositories
+Now, use the $$\texttt{wstool}$$ to install required packages from source repositories
 {% label %}command-line{% endlabel %}
 ```bash
 wstool init .
@@ -159,23 +161,27 @@ Finally, check that you can run the gazebo simulation:
 ```bash
 roslaunch osr_gazebo robotic_setup.launch
 ```
-> #### Info::Gazebo takes for ever loading
+> #### Note::Gazebo takes for ever loading
 The first time you run gazebo, it will download several models
 available online. You may want to start first gazebo alone and give it time to
 download the models:
->
-> `gzserver --verbose`
+{% label %}command-line{% endlabel %}
+```bash
+gzserver --verbose
+```
 
 ![Robot simulation in Gazebo.](../assets/installation/denso_in_gazebo.jpg)
 
-> #### Warning
-In case of failure starting the simulation, please check the
+> #### Note::Gazebo failure
+In case of failure starting the simulation, check the
 [system requirements for Gazebo](http://gazebosim.org/tutorials?tut=guided_b1&cat=#Systemrequirements).
-If your computer doesn't have a dedicated video card, it's likely that you
-won't be able to run the graphical interface. Try again setting the `gui`
+If your computer does not have a dedicated video card, it is likely that you
+will not be able to run the graphical interface. Try setting the $$\texttt{gui}$$
 parameter to false
->
-> `roslaunch osr_gazebo robotic_setup.launch gui:=false`
+{% label %}command-line{% endlabel %}
+```bash
+roslaunch osr_gazebo robotic_setup.launch gui:=false
+```
 
 ## To learn more about this topic
 

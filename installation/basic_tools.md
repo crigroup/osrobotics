@@ -37,7 +37,7 @@ python -c "import scipy; print('scipy v{}'.format(scipy.__version__))"
 Git is sophisticated version control software. First, you should create an
 account in [GitHub](https://github.com/).
 
-Next, install `git` from the Ubuntu package repositories
+Next, install Git from the Ubuntu package repositories
 {% label %}command-line{% endlabel %}
 ```bash
 sudo apt-get update

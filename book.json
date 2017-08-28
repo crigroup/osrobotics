@@ -30,6 +30,10 @@
       "exercise": {
           "alert": "warning",
           "picto": "fa-question-circle-o"
+      },
+      "note": {
+          "alert": "primary",
+          "picto": "fa-thumbs-o-up"
       }
     }
   },

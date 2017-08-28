@@ -5,12 +5,12 @@ environments. It is widely used in academia and industry.
 
 ## OpenRAVE installation
 
-At this point, OpenRAVE has a considerable number of dependencies that have to
-be installed manually.
+OpenRAVE has a number of dependencies that have to be installed
+manually.
 
 ## Dependencies
 
-You need to install the following programs:
+First, install the following programs:
 {% label %}command-line{% endlabel %}
 ```bash
 sudo apt-get install build-essential cmake doxygen g++ git ipython octave     \
@@ -18,7 +18,7 @@ python-dev python-h5py python-numpy python-pip python-scipy qt5-default       \
 minizip
 ```
 
-Next, you will need to install the following libraries, which are available
+Next, install the following libraries, which are available
 from the Ubuntu package repositories:
 {% label %}command-line{% endlabel %}
 ```bash
@@ -47,7 +47,7 @@ sudo make install
 
 ## FCL - The Flexible Collision Library
 
-Build and install `fcl` version 0.5.0:
+Build and install FCL version 0.5.0:
 {% label %}command-line{% endlabel %}
 ```bash
 mkdir -p ~/git; cd ~/git
@@ -59,9 +59,9 @@ make -j `nproc`
 sudo make install
 ```
 
-## `sympy` Version
+## Sympy
 
-`IKFast` requires `sympy` 0.7.1. To get this version you need to use `pip`:
+OpenRAVE's IKFast requires Sympy version 0.7.1. To get this version you need to use Pip:
 {% label %}command-line{% endlabel %}
 ```bash
 pip install --upgrade --user sympy==0.7.1
@@ -83,11 +83,12 @@ sudo make install
 
 ## Testing the installation
 
-Let's try to run OpenRAVE with an existing environment:
+Let's try OpenRAVE on a built-in environment:
 {% label %}command-line{% endlabel %}
 ```bash
 openrave data/lab1.env.xml
 ```
-![OpenRAVE Default Viewer](../assets/installation/openrave_installation_testing.png)
+![OpenRAVE default viewer](../assets/installation/openrave_installation_testing.png)
 
-Now you should be able to try some of the [OpenRAVE examples](http://openrave.org/docs/latest_stable/examples/).
+Now you should be able to try some of the
+[OpenRAVE examples](http://openrave.org/docs/latest_stable/examples/).
