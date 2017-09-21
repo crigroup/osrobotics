@@ -4,8 +4,9 @@
 
 Consider a 1-DOF, linear, position-controlled robot as in Fig. 1. One
 would like to control the contact force $$f$$ between the robot
-end-effector and the wall as $$f_\mathrm{ref}$$, where
-$$f_\mathrm{ref}$$ is, for example, a constant positive value.
+end-effector and the wall so as to track a reference
+$$f_\mathrm{ref}$$, where $$f_\mathrm{ref}$$ is, for example, a
+constant positive value.
 
 ![Contact interaction between a one-dof robot and a
  wall.](../assets/control/one_dof.png)
