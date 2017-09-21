@@ -1,4 +1,4 @@
-##Examples: hybrid control and impedance control
+# Examples: hybrid control and impedance control
 
 Firstly, we start the Gazebo environment in Terminal 1 and run robot
 controllers launch file in Terminal 2 
