@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ##Examples: hybrid control and impedance control
 
 Firstly, we start the Gazebo environment in Terminal 1 and run robot
@@ -267,3 +268,6 @@ plt.show()
 
 ![The graph of force in Z direction versus time](../assets/control/force_vs_time.png)
      
+=======
+# Examples: hybrid control and impedance control
+>>>>>>> 213fffc0402e6ac9f4574018967ed29685ceb698

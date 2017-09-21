@@ -1,6 +1,7 @@
-## Basic tools: Ubuntu, Python, Git
+# Basic tools: Ubuntu, Python, Git
 
-### Ubuntu
+## Ubuntu
+
 1. Download [Ubuntu 16.04 Desktop](https://www.ubuntu.com/download/desktop).
 2. Create a Bootable Thumbdrive. You can use this
 [Universal USB installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)
@@ -10,15 +11,18 @@
 [installation instructions](https://www.ubuntu.com/download/desktop/install-ubuntu-desktop)
 to your specific needs.
 
-### Python
+## Python
+
 You can install python from the Ubuntu package repositories. Run the following
 commands in a terminal:
+{% label %}command-line{% endlabel %}
 ```bash
 sudo apt-get update
 sudo apt-get install ipython python-dev python-numpy python-pip python-scipy
 ```
 
 To test your installation, run the following commands:
+{% label %}command-line{% endlabel %}
 ```bash
 python -c "import IPython; print('IPython v{}'.format(IPython.__version__))"
 # IPython v2.4.1
@@ -28,23 +32,27 @@ python -c "import scipy; print('scipy v{}'.format(scipy.__version__))"
 # scipy v0.17.0
 ```
 
-### Git
+## Git
+
 Git is sophisticated version control software. First, you should create an
 account in [GitHub](https://github.com/).
 
-Next, install `git` from the Ubuntu package repositories
+Next, install Git from the Ubuntu package repositories
+{% label %}command-line{% endlabel %}
 ```bash
 sudo apt-get update
 sudo apt-get install git
 ```
 
 Set-up your Github details
+{% label %}command-line{% endlabel %}
 ```bash
 git config --global user.name "your-github-username"
 git config --global user.email "your-email@address.com"
 ```
 
 You can now clone the course repository
+{% label %}command-line{% endlabel %}
 ```bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src

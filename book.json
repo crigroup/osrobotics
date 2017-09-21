@@ -4,9 +4,10 @@
     "readme": "introduction.md"
   },
   "plugins": [
+    "callouts",
+    "highlight",
     "codeblock-label",
     "image-captions",
-    "richquotes",
     "mathjax",
     "youtube"],
   "pluginsConfig": {
@@ -14,9 +15,27 @@
       "align": "center",
       "caption": "Figure _BOOK_IMAGE_NUMBER_. _CAPTION_"
     },
-    "richquotes": {
-			"default": false
-		}
+    "mathjax":{
+        "forceSVG": false
+    },
+    "callouts":{
+      "definition": {
+          "alert": "info",
+          "picto": "fa-pencil-square-o"
+      },
+      "example": {
+          "alert": "success",
+          "picto": "fa-key"
+      },
+      "exercise": {
+          "alert": "warning",
+          "picto": "fa-question-circle-o"
+      },
+      "note": {
+          "alert": "primary",
+          "picto": "fa-thumbs-o-up"
+      }
+    }
   },
   "styles": {
     "website": "styles/website.css"

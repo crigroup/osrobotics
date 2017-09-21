@@ -7,7 +7,8 @@ would like to control the contact force $$f$$ between the robot
 end-effector and the wall as $$f_\mathrm{ref}$$, where
 $$f_\mathrm{ref}$$ is, for example, a constant positive value.
 
-![Contact interaction between a one-dof robot and a wall.](../assets/control/one_dof.png)
+![Contact interaction between a one-dof robot and a
+ wall.](../assets/control/one_dof.png)
 
 For that, one can use a Proportional-Derivative (PD) control law as in
 Fig. 2. Note that the command sent to the robot is $$x_\mathrm{com}$$

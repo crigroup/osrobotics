@@ -8,7 +8,7 @@ Robot Operating System (ROS). This allows us to conveniently integrate
 all the tools discussed in the previous chapters such as OpenRAVE,
 OpenCV and the Point Cloud Library (PCL).
 
-![Software architecture](../assets/system/software_architecture.png)
+![Software architecture.](../assets/system/software_architecture.png)
 
 Figure 5 shows a representation of the software architecture. The
 simulation of the hardware components is done using **Gazebo**. It is
