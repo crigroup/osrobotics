@@ -266,6 +266,3 @@ plt.show()
 ```
 
 ![The graph of force in Z direction versus time](../assets/control/force_vs_time.png)
-     
-=======
-# Examples: hybrid control and impedance control
