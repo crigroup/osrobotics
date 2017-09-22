@@ -6,7 +6,7 @@ controllers launch file in Terminal 2
 # Terminal 1
 roslaunch osr_gazebo cubes_task.launch
 # Terminal 2
-roslaunch osr_control controllers.launch
+roslaunch osr_control controllers_force_control_demo.launch
 ```
 Now, start an `iPython` shell and load the OpenRAVE
 environment for motion planning
