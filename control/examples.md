@@ -1,6 +1,20 @@
+{% include "../math.md" %}
+
 # Examples: hybrid control and impedance control
 
-Firstly, we start the Gazebo environment in Terminal 1 and run robot
+> #### Example::Hybrid control in Gazebo
+>
+We go through the same example as in [Robot simulation in
+ROS/Gazebo](../system/simulation.md) in order to pick up the box and
+retreat from the table surface. Note however the following differences 
+* We use another ROS launch file, which in particular loads different
+  controllers, see below;
+* We use $$\texttt{JointPositionController}$$ instead of
+ $$\texttt{JointTrajectoryController}$$ so as to have real-time access
+ to the joint position;
+* We use $$\texttt{FTsensor}$$ to access force/torque measurements.
+>
+First, we start the Gazebo environment in Terminal 1 and run robot
 controllers launch file in Terminal 2 
 ```bash
 # Terminal 1
@@ -8,23 +22,22 @@ roslaunch osr_gazebo cubes_task.launch
 # Terminal 2
 roslaunch osr_control controllers_force_control_demo.launch
 ```
-Now, start an `iPython` shell and load the OpenRAVE
-environment for motion planning
-
-```python
+>
+Next, run a similar code as in [Robot simulation in
+ROS/Gazebo](../system/simulation.md) up to the retreating move
+{% label %}python{% endlabel %}
+``` python
 import rospy
 import criros
 import collections
 import copy
 import time
 import numpy as np
-import matplotlib.pyplot as plt
 import openravepy as orpy
 import tf.transformations as tr
 from osr_openrave import kinematics, planning
 from geometry_msgs.msg import WrenchStamped
 from osr_control.controllers import GripperController, JointPositionController, FTsensor
-
 rospy.init_node('setting')
 env = orpy.Environment()
 if not env.Load('worlds/cubes_task.env.xml'):
@@ -44,12 +57,6 @@ rate = rospy.Rate(js_rate)
 # Scale down the velocity and acceleration limits
 robot.SetDOFVelocityLimits(robot.GetDOFVelocityLimits()*0.4)
 robot.SetDOFAccelerationLimits(robot.GetDOFAccelerationLimits()*0.2)
-```
-
-Load the IKFast and link statistics databases used for finding close
-IK solutions
-
-```python
 iktype = orpy.IkParameterization.Type.Transform6D
 success = kinematics.load_ikfast(robot, iktype)
 if not success:
@@ -63,37 +70,16 @@ if not statsmodel.load():
   statsmodel.autogenerate()
 statsmodel.setRobotWeights()
 statsmodel.setRobotResolutions(xyzdelta=0.01)
-```
-
-Next, connect to the controller interfaces
-
-```python
 joint_controller = JointPositionController()
 gripper_controller = GripperController()
 ft_sensor = FTsensor()
-```
-
-Find a valid IK solution for grasping one of the cubes
-
-```python
 cube = env.GetKinBody('cube02')
 cube_centroid = cube.ComputeAABB().pos()
 Tgrasp = tr.euler_matrix(0, np.pi, 0)
 Tgrasp[:3,3] = cube_centroid
 qgrasp = kinematics.find_closest_iksolution(robot, Tgrasp, iktype)
-```
-
-One can use `orpy.misc.DrawAxes` to visualize a
-transformation in OpenRAVE
-
-```python
 axes = []
 axes.append( orpy.misc.DrawAxes(env, Tgrasp, dist=0.05) )
-```
-
-Plan and move the robot to the grasping pose
-
-```python
 traj = planning.plan_to_joint_configuration(robot, qgrasp)
 robot.WaitForController(0)
 traj_spec = traj.GetConfigurationSpecification()
@@ -106,22 +92,12 @@ for t in np.append(np.arange(0,traj_duration, T),traj_duration):
   joint_controller.set_joint_positions(list(traj_spec.ExtractJointValues(traj.Sample(t),robot, manipulator.GetArmIndices())))
   robot.SetDOFValues(list(joint_controller.get_joint_positions()), manipulator.GetArmIndices())
   rate.sleep()
-```
-
-Grasp the middle cube
-
-```python
 gripper_controller.command(0.05)
 taskmanip.CloseFingers()
 gripper_controller.wait()
 robot.WaitForController(0)
 robot.Grab(cube)
 gripper_controller.grab('{0}::link'.format(cube.GetName()))
-```
-  
-Find a valid IK solution for the retreat pose and execute retreating
-  
-```python
 Tretreat = np.array(Tgrasp)
 Tretreat[2,3] += 0.05
 Tretreat[0,3] -= 0.1
@@ -138,10 +114,10 @@ for t in np.append(np.arange(0,traj_duration,T),traj_duration):
   rate.sleep()
 time.sleep(2)
 ```
-
-Moving the box down to the table surface until contact
-
-```python
+>
+Now, move the box down to the table surface until contact
+{% label %}python{% endlabel %}
+``` python
 dt = 1. / js_rate
 Kf = 5000.
 Kp = np.array([1., 1., 1.]) * 1. 
@@ -157,7 +133,6 @@ link_idx = [l.GetName() for l in robot.GetLinks()].index('robotiq_85_base_link')
 link_origin = robot.GetLink('robotiq_85_base_link').GetTransform()[:3,3]
 J = np.zeros((6,6))
 twist = np.zeros(6)
-
 while not rospy.is_shutdown():
   q_actual = joint_controller.get_joint_positions()
   robot.SetDOFValues(q_actual, manipulator.GetArmIndices())
@@ -190,10 +165,10 @@ while not rospy.is_shutdown():
     break
 time.sleep(2)
 ```
-
-Starting sliding on the surface
-
-```python
+>
+Slide on the surface using hybrid control
+{% label %}python{% endlabel %}
+``` python
 vlin = 0.006         #linear velocity
 dr_slide = [1.,0.]   # sliding direction on x-y plane
 dt = 1./ js_rate  # time step  
@@ -220,7 +195,6 @@ link_origin = robot.GetLink('robotiq_85_base_link').GetTransform()[:3,3]
 J = np.zeros((6,6))
 twist = np.zeros(6)
 rospy.loginfo('Sliding')
-
 while not rospy.is_shutdown() and (rospy.get_time() - initime) < timeout:
   xr[0] += dr_slide[0] * vlin * dt
   xr[1] += dr_slide[1] * vlin * dt
@@ -254,15 +228,20 @@ while not rospy.is_shutdown() and (rospy.get_time() - initime) < timeout:
   time_data.append(rospy.get_time() - initime)
   joint_controller.set_joint_positions(qc)
   rate.sleep()
-rospy.loginfo("Complete hybrid force control demo")
-
-#Plot the graph of force in Z direction versus time
-plt.plot(time_data,force_data, label = "Controlled force in Z direction")
-plt.axhline(y=-15.0, xmin=0, xmax=15., linewidth=2, color = 'r',label = "reference line")
+rospy.loginfo("Complete hybrid control demo")
+```
+>
+Plot the force data
+{% label %}python{% endlabel %}
+``` python
+import matplotlib.pyplot as plt
+plt.ion()
+plt.plot(time_data,force_data, label = "Force measured in the Z direction")
+plt.axhline(y=-15.0, xmin=0, xmax=15., linewidth=2, color = 'r',label = "Reference")
 plt.axis([0,20,-20,0])
 plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
        ncol=2, mode="expand", borderaxespad=0.)
 plt.show()
 ```
 
-![The graph of force in Z direction versus time](../assets/control/force_vs_time.png)
+![Force measured in the Z direction as a function of time](../assets/control/force_vs_time.png)
