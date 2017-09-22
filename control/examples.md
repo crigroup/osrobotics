@@ -243,5 +243,4 @@ plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
        ncol=2, mode="expand", borderaxespad=0.)
 plt.show()
 ```
-
 ![Force measured in the Z direction as a function of time](../assets/control/force_vs_time.png)
