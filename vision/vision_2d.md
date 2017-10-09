@@ -6,13 +6,13 @@ we shall not duplicate the effort here. The reader is advised to go
 through the whole tutorial, with particular attention to the following
 sections:
 
-1. [Canny edge detection](http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_canny/py_canny.html#canny)
+1. [Canny edge detection](http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_canny/py_canny.html#canny);
 
-2. [Contours](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_table_of_contents_contours/py_table_of_contents_contours.html#table-of-content-contours) 
+2. [Contours](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_table_of_contents_contours/py_table_of_contents_contours.html#table-of-content-contours); 
 
-3. [Hough line transform](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html#hough-lines)
+3. [Hough line transform](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html#hough-lines);
 
-4. [Feature detection and description](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_table_of_contents_feature2d/py_table_of_contents_feature2d.html#py-table-of-content-feature2d) 
+4. [Feature detection and description](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_table_of_contents_feature2d/py_table_of_contents_feature2d.html#py-table-of-content-feature2d). 
 
 We shall see now, through an example, how OpenCV can be used in a
 robotics setting.
@@ -29,7 +29,7 @@ determine its 3D position.
 >First, make sure that you have installed
 >[OpenCV](../installation/vision.md#installation), [cloned the course repository](../installation/basic_tools.md#git),
 >and changed directory to
->$$\texttt{`~/catkin_ws/src/osr_course_pkgs/osr_examples/opencv_example/}$$. Define
+>$$\texttt{~/catkin_ws/src/osr_course_pkgs/osr_examples/opencv_example/}$$. Define
 >the function that finds the center of a hole in an image
 >{% label %}python{% endlabel %}
 ``` python
@@ -100,4 +100,7 @@ XYZ /= XYZ[-1]
 print "3D coordinates of the hole: ", XYZ[:3]
 ```
 >
+{% label %}output{% endlabel %}
+```
 3D coordinates of the hole:  [-0.22933565 -0.2300843   0.64514768]
+```

@@ -342,9 +342,8 @@ First, load the environment, the viewer and the Denso robot
 {% label %}python{% endlabel %}
 ```python
 import openravepy as orpy
->
 env = orpy.Environment()
-env.Load('robots/denso_robotiq_85_gripper.robot.xml')
+env.Load('osr_openrave/robots/denso_robotiq_85_gripper.robot.xml')
 env.SetDefaultViewer()
 robot = env.GetRobot('denso_robotiq_85_gripper')
 manipulator = robot.SetActiveManipulator('gripper')
