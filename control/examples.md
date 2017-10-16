@@ -37,8 +37,7 @@ where $$\delta t$$ is the controller time step (assuming a digital
 implementation).
 
 Next, the task-space position tracking error is translated into a
-configuration-space error by [differential Inverse Kinematics](inverse_kinematics.md), which
-can be finally fed into the robot internal position controller.
+configuration-space error by [differential Inverse Kinematics](../kinematics/inverse_kinematics.md#velocity-space-or-differential-ik), which can be finally fed into the robot internal position controller.
 
 > #### Example::Hybrid control in Gazebo
 >
