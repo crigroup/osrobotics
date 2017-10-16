@@ -23,7 +23,7 @@ hybrid position-force controller.
    x-axis.](../assets/control/controller_hybrid.png)
 
 The leftmost part of the hybrid scheme is similar to a PD force
-controller (see Section [Principles of force control]), which transforms
+controller (see Section [Principles of force control](principles.md), which transforms
 the *force* tracking error $$f_\mathrm{err}$$ in the z-axis into a
 *position* tracking error $$z_\mathrm{err}$$ in the z-axis. Next,
 $$z_\mathrm{err}$$ is combined with the position tracking error
@@ -37,7 +37,7 @@ where $$\delta t$$ is the controller time step (assuming a digital
 implementation).
 
 Next, the task-space position tracking error is translated into a
-configuration-space error by [differential Inverse Kinematics], which
+configuration-space error by [differential Inverse Kinematics](inverse_kinematics.md), which
 can be finally fed into the robot internal position controller.
 
 > #### Example::Hybrid control in Gazebo
