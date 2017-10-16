@@ -3,7 +3,7 @@
 # Examples: hybrid control and impedance control
 ## Hybrid position-force control
 
-In Section [Principles of force control], we have studied force control
+In Section [Principles of force control](principles.md), we have studied force control
 in a 1-DOF robot. In multi-DOF systems, one usually needs to
 simultaneously control the force in some task directions and the
 position in others, a scheme known as *hybrid position-force control*.
