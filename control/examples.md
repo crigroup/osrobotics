@@ -1,6 +1,45 @@
 {% include "../math.md" %}
 
 # Examples: hybrid control and impedance control
+Hybrid position-force control
+=============================
+
+In Section [Principles of force control], we have studied force control
+in a 1-DOF robot. In multi-DOF systems, one usually needs to
+simultaneously control the force in some task directions and the
+position in others, a scheme known as *hybrid position-force control*.
+Consider for instance the task of sliding the robot end-effector on a
+tabletop (Fig. 1), which can be found in assembly or grinding.
+
+![Sliding the robot end-effector on a tabletop](../assets/control/hybrid.png)
+
+To achieve this task, one needs to control the normal contact force
+(along the z-axis) to be at some positive values (for example
+$$f_\mathrm{ref}=5\ \mathrm{Newtons}$$), while controlling the position
+along the x-axis (sliding motion). This can be achieved by the following
+hybrid position-force controller.
+
+![ Block diagram of a hybrid position-force controller to
+   control the contact force in the z-axis and the position in the
+   x-axis.](../assets/control/controller_hybrid.png)
+
+The leftmost part of the hybrid scheme is similar to a PD force
+controller (see Section [Principles of force control]), which transforms
+the *force* tracking error $$f_\mathrm{err}$$ in the z-axis into a
+*position* tracking error $$z_\mathrm{err}$$ in the z-axis. Next,
+$$z_\mathrm{err}$$ is combined with the position tracking error
+$$x_\mathrm{err}$$ in the x-axis to obtain a *task-space* position
+tracking error $$(x_\mathrm{err},z_\mathrm{err})$$.
+
+Note that $$x_\mathrm{err}$$ can be easily derived from the desired motion
+in the x-axis . For instance, if the desired motion is to slide towards
+the right with a velocity $$v_x$$, then $$x_\mathrm{err}:=v_x \delta t$$,
+where $$\delta t$$ is the controller time step (assuming a digital
+implementation).
+
+Next, the task-space position tracking error is translated into a
+configuration-space error by [differential Inverse Kinematics], which
+can be finally fed into the robot internal position controller.
 
 > #### Example::Hybrid control in Gazebo
 >
