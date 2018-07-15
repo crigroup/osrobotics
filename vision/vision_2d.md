@@ -29,7 +29,7 @@ determine its 3D position.
 >First, make sure that you have installed
 >[OpenCV](../installation/vision.md#installation), [cloned the course repository](../installation/basic_tools.md#git),
 >and changed directory to
->$$\texttt{~/catkin_ws/src/osr_course_pkgs/osr_examples/opencv_example/}$$. Define
+>$$\texttt{~/catkin_ws/src/osr_course_pkgs/osr_examples/vision_2d_data/}$$. Define
 >the function that finds the center of a hole in an image
 >{% label %}python{% endlabel %}
 ``` python
