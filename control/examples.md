@@ -8,7 +8,7 @@ in a 1-DOF robot. In multi-DOF systems, one usually needs to
 simultaneously control the force in some task directions and the
 position in others, a scheme known as *hybrid position-force control*.
 Consider for instance the task of sliding the robot end-effector on a
-tabletop (Fig. 1), which can be found in assembly or grinding.
+tabletop, which can be found in assembly or grinding.
 
 ![Sliding the robot end-effector on a tabletop](../assets/control/hybrid.png)
 

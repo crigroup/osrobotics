@@ -80,7 +80,7 @@ The above derivations raise the following remarks:
 
 
 > #### Exercise::IK in Python
-Consider a planar 2-DOF manipulator as in Fig. 1, with the following
+Consider a planar 2-DOF manipulator as in the figure above, with the following
 dimensions $$\texttt{d1=0.1, d2=0.15}$$.
 >
 1.  Write the Python code for $$\texttt{ik(x_des,y_des)}$$;
@@ -122,7 +122,7 @@ solutions for a significant proportion of desired task values.
 
 
 Redundancy arises when there are *multiple IK solutions* for a given
-desired task value. Consider the planar 2-DOF manipulator in Fig. 1. For
+desired task value. Consider the planar 2-DOF manipulator as above. For
 the given value $$(x_\mathrm{des},y_\mathrm{des})$$ of the task, there are
 two distinct IK solutions, namely $$(\theta_1^*,\theta_2^*)$$ and
 $$({\theta'}^*_1,{\theta'}^*_2)$$. For a manipulator with 6 revolute
@@ -341,7 +341,7 @@ of 0 makes the algorithm return all solutions. Here, one can see that
 there are six possible solutions.
 >
 To check out, for example, solutions number 4 and number 0, one can do
-(see Fig. 3)
+(see figure below)
 >
 {% label %}python{% endlabel %}
 ``` python
@@ -372,7 +372,7 @@ print solutions
 > #### Example::Velocity-space IK with OpenRAVE
 Velocity-space (or differential) IK is typically used to continuously
 move the manipulator following some task-space constraints. Consider
-the scenario in Fig. 3 where the object has been grasped. Suppose that
+the scenario in the previous example, where the object has been grasped. Suppose that
 we would like to move the object upwards by 10 cm, without changing
 its orientation. This can be achieved by constraining the translation
 velocity of the manipulator to be aligned with the Z-axis and the

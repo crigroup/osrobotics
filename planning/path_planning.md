@@ -27,12 +27,12 @@ answer the path planning problem: if
     graph-theoretic sense),
 
 then there exists a collision-free path between $$\bfq_\mathrm{start}$$
-and $$\bfq_\mathrm{goal}$$ (see Fig. 1).
+and $$\bfq_\mathrm{goal}$$ (see figure below).
 
 Methods for building the roadmap fall into two families: deterministic
 or probabilistic. A typical deterministic method is the Grid Search,
 where the configuration space $$\mathcal{C}$$ is sampled following a
-regular grid, as in Fig. 1. A sampled configuration is rejected if it is
+regular grid, as in the figure below. A sampled configuration is rejected if it is
 not in $$\mathcal{C}_\mathrm{free}$$. Next, one attempts to connect every
 pair of adjacent configurations (adjacent in the sense of the grid
 structure) to each other: if the straight segment connecting the two
@@ -50,7 +50,7 @@ $$\mathcal{C}_\mathrm{free}$$.
 
 In the Probabilistic Roadmap method, instead of following a regular
 grid, samples are taken at random in $$\mathcal{C}_\mathrm{free}$$, see
-Fig. 2. Since there is no a priori grid structure, several methods exist
+figure below. Since there is no a priori grid structure, several methods exist
 for choosing the pairs of vertices for which connection is attempted:
 for instance, one may attempt, for each vertex, to connect it to every
 vertices that are within a specified radius *r* from it.
@@ -145,7 +145,7 @@ Specifically, RRT iteratively builds a tree (see Algorithm 1), which is
 also a roadmap, but which has the property of exploring “optimally” the
 free space. The key lies in the `EXTEND`{.sourceCode} function, which
 selects the vertex in the tree that is the closest to the randomly
-sampled configuration (see Algorithm 2 and Fig. 4). Thus, the
+sampled configuration (see Algorithm 2). Thus, the
 probability for a vertex in the tree to be selected is proportional to
 the size of its Voronoi region, causing the tree to grow preferably
 towards previously under-explored regions.
@@ -184,7 +184,7 @@ cases can happen
     $$\texttt{q_near}$$, and the segment of length $$r$$ from
     $$\texttt{q_near}$$ and in the direction of $$\texttt{q_rand}$$
     is collision-free, then the end of that segment is returned as
-    $$\texttt{q_new}$$ (see Fig. 4);
+    $$\texttt{q_new}$$ (see figure below);
 3.  else, $$\texttt{STEER}$$ returns $$\texttt{Failure}$$.
 
 ![Illustration for the EXTEND function. The tree is

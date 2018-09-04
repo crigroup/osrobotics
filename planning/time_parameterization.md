@@ -68,7 +68,7 @@ and $$s(0) = 0$$, $$s(T) = 1$$, $$\dot s(0) = 0$$, $$\dot s(T) = 0$$. Note that
 the initial and final velocities are constrained to be zero so as to
 ensure velocity continuity at the junction of different path segments.
 
-This problem has a closed-form solution (see Fig. 1)
+This problem has a closed-form solution:
 
 1. If $$\dot s_{\max} \geq \sqrt{\ddot s_{\max}}$$, then the optimal profile is composed of two segments: 
 

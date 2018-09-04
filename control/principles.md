@@ -2,7 +2,7 @@
 
 # Principles of force control
 
-Consider a 1-DOF, linear, position-controlled robot as in Fig. 1. One
+Consider a 1-DOF, linear, position-controlled robot as in the figure below. One
 would like to control the contact force $$f$$ between the robot
 end-effector and the wall so as to track a reference
 $$f_\mathrm{ref}$$, where $$f_\mathrm{ref}$$ is, for example, a
@@ -11,8 +11,8 @@ constant positive value.
 ![Contact interaction between a one-dof robot and a
  wall.](../assets/control/one_dof.png)
 
-For that, one can use a Proportional-Derivative (PD) control law as in
-Fig. 2. Note that the command sent to the robot is $$x_\mathrm{com}$$
+For that, one can use a Proportional-Derivative (PD) control law as
+below. Note that the command sent to the robot is $$x_\mathrm{com}$$ 
 is a desired position.
 
 ![Block diagram of a force controller to control the contact force
@@ -22,14 +22,14 @@ variable s stands for differentiation with respect to time
 
 
 The Force/Torque (F/T) sensor measures the contact force between the
-end-effector and the wall. When there is no contact (Fig. 1, top
+end-effector and the wall. When there is no contact (first figure, top
 sketch), the contact force is zero, thus $$f_\mathrm{sensed}=0$$,
 yielding $$f_\mathrm{err}>0$$. Assuming stationary initial conditions,
 one has next $$x_\mathrm{err}>0$$, which implies that
 $$x_\mathrm{com}>x_\mathrm{cur}$$, which in turn makes the robot move
 to the right, towards the wall.
 
-Upon contact between the robot end-effector and the wall (Fig. 1,
+Upon contact between the robot end-effector and the wall (first figure,
 bottom sketch), the contact force sensed by the F/T sensor
 $$f_\mathrm{sensed}$$ becomes positive, but initially smaller than
 $$f_\mathrm{ref}$$ – assuming "soft" collision. Therefore, initially,

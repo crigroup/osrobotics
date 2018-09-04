@@ -4,7 +4,8 @@
 
 ## Introductory example: a planar 2-DOF manipulator
 
-Consider a planar manipulator with two revolute joints, as in Fig. 1.
+Consider a planar manipulator with two revolute joints, as in the
+figure below.
 The joint angles are denoted by $$\bfq:=(\theta_1,\theta_2)$$. The
 end-effector is a parallel gripper (in blue). The position and the
 orientation of the end-effector are denoted by $$\bfp:=(x,y,\theta)$$. The
@@ -92,7 +93,7 @@ $$\dot\bfp = \bfJ(\bfq) \dot\bfq.$$
 <br/>
 
 > #### Exercise::FK in Python
-Consider a planar 2-DOF manipulator as in Fig. 1, with the following
+Consider a planar 2-DOF manipulator as in the figure above, with the following
 dimensions $$\texttt{d1=0.1, d2=0.15}$$.
 >
 1.  Write the Python code of $$\texttt{fk(theta1, theta2)}$$, which

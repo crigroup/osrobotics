@@ -114,7 +114,7 @@ consist in
 
 # Complete motion planning pipeline
 
-Fig. 3 summarizes the complete motion pipeline as presented in this
+The following figure summarizes the complete motion pipeline as presented in this
 chapter. This pipeline is widely (if not the only one) used in motion
 planning software that are actually deployed on factory shop floors.
 

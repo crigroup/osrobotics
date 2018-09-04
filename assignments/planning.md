@@ -61,7 +61,7 @@ h += 0.011
 ```
 >
 Note that we have generated 40 green boxes, on 20 layers, at random
-positions and orientations within the container, as shown in Fig. 1.
+positions and orientations within the container, as shown below:
 >
 ![Environment of the assignment.](../assets/assignments/pick_and_place.png)
 >

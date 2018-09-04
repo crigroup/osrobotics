@@ -10,7 +10,7 @@ interaction forces that arise from the contact between the robot and
 the environment.
 
 Consider for instance the task of sliding a pin on the surface of a
-woodblock prior to its insertion (Fig. 1).
+woodblock prior to its insertion.
 
 ![Sliding a pin on the surface of a
 woodblock.](../assets/control/pin_insertion.png)
@@ -34,11 +34,11 @@ joint angles into appropriate commands, e.g. motor currents. Such
 low-level commands are generally not accessible to the end users.
 
 To overcome this limitation, one can augment position-controlled
-robots with Force/Torque (F/T) sensors mounted near the end-effector
-(Fig. 1). Then, by closing a feedback loop on top of the measures
+robots with Force/Torque (F/T) sensors mounted near the
+end-effector. Then, by closing a feedback loop on top of the measures
 provided by the F/T sensors, it is possible to implement force
-control, as shown in Section [Principles of force
-control](principles.md)
+control, as shown in Section
+[Principles of force control](principles.md)
 
 Using these principles, one can next implement a variety of force
 control schemes, as detailed in Section [Examples: hybrid control and

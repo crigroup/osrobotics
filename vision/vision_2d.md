@@ -19,7 +19,7 @@ robotics setting.
 
 > #### Example::Finding the 3D position of a hole using stereo vision
 >Many robotic applications, such as assembly or riveting, require
-finding the 3D positions of circular holes. Fig. 26  shows a scene
+finding the 3D positions of circular holes. The following figure  shows a scene
 as captured by a stereo camera. This example demonstrates how to find the
 coordinates of the hole in the 2D images and how to subsequently
 determine its 3D position.
@@ -104,5 +104,5 @@ print "3D coordinates of the hole: ", XYZ[:3]
 >
 {% label %}output{% endlabel %}
 ```
-3D coordinates of the hole:  [-0.22933565 -0.2300843   0.64514768]
+3D coordinates of the hole:   [-0.00453072 -0.06415685  0.64514768]
 ```
