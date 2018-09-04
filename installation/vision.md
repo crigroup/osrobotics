@@ -1,6 +1,6 @@
 {% include "../math.md" %}
 
-# About robot vision softwares
+# About robot vision software
 
 **1. OpenCV**:  is an open-source library that includes many computer vision
 algorithms, such as object detection or other *image* processing
