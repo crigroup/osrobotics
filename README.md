@@ -64,3 +64,9 @@ gitbook serve
 ```
 
 If everything is right, the website will be *served* here: http://localhost:4000
+
+## Upload to osrobotics.org
+```
+rsync -r -a -v -e  "ssh -p2222" --delete _book/ user@server:osrobotics/osr/
+```
+
