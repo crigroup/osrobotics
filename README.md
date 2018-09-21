@@ -1,7 +1,6 @@
 # Introduction to Open-Source Robotics
 
-These instructions are intended for contributors. If you want to read the book,
-it *lives* here: https://crigroup.gitbooks.io/osrobotics/content/
+These instructions are intended for contributors. If you want to read the book, see: https://crigroup.gitbooks.io/osrobotics/content/ (live version), or http://www.osrobotics.org/osr/ (published version). 
 
 ## Requirements
 Installing GitBook is easy and straightforward. You just need:
