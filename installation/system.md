@@ -119,7 +119,13 @@ Install any missing dependencies using `rosdep`
 {% label %}command-line{% endlabel %}
 ```bash
 rosdep update
-rosdep install --from-paths . --ignore-src -y
+rosdep install --from-paths . --ignore-src -r -y
+```
+
+If `rosdep` is unable to install python-termcolor, install it manually
+{% label %}command-line{% endlabel %}
+```bash
+sudo apt-get install python-termcolor
 ```
 
 Now compile your ROS workspace:
