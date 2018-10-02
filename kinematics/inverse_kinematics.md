@@ -94,7 +94,7 @@ dimensions $$\texttt{d1=0.1, d2=0.15}$$.
 
 
 > #### Definition::Configuration space
-In the general case, the space of all possible robot joint angles $$\bfq$$
+In the general case, the set of all possible robot joint angles $$\bfq$$
 will be refered to as the *configuration space* of the robot and denoted
 $$\mathcal{C}$$. The *dimension* of the configuration space is then the
 number of robot joints, which is 6 in the case of the Denso manipulator

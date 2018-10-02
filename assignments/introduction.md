@@ -1,6 +1,6 @@
 # Assignments
 
-There are two assignments:
+There are currently two assignments:
 
 1. [Motion planning assignment](planning.md)
 

@@ -454,7 +454,7 @@ Questions:
    $$\texttt{robotiq_85_base_link}$$ at time $$t_1$$.
 3. Using these Jacobians, compute another approximation of the
    transformation matrix of the $$\texttt{robotiq_85_base_link}$$
-   at time $$\texttt{q_1 + delta_t*qdot_1}$$.
+   at time $$\texttt{q1 + delta_t*qdot1}$$.
 
 
 # To learn more about this topic

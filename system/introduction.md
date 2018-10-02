@@ -10,7 +10,7 @@ OpenCV and the Point Cloud Library (PCL).
 
 ![Software architecture.](../assets/system/software_architecture.png)
 
-Figure 5 shows a representation of the software architecture. The
+The figure above shows a representation of the software architecture. The
 simulation of the hardware components is done using **Gazebo**. It is
 a multi-robot simulator in a 3-dimensional world, with a robust
 physics engine, high-quality graphics, and convenient programmatic and

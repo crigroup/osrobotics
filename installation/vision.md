@@ -1,18 +1,22 @@
 {% include "../math.md" %}
 
-# About robot vision software
+# Vision: OpenCV and PCL
 
-**1. OpenCV**:  is an open-source library that includes many computer vision
-algorithms, such as object detection or other *image* processing
-functionalities.
+## OpenCV
 
-**2. The Point Cloud Library (PCL)**: is an open-source library for processing
+OpenCV is an open-source library that includes many computer vision
+algorithms for 2D images, such as object detection or other image
+processing functionalities.
+
+## PCL
+
+The Point Cloud Library (PCL) is an open-source library for processing
 *point clouds*. The library provides many algorithms for filtering,
 feature estimation, registration, model fitting, or segmentation.
 
 # Installation
 
-**1. OpenCV**:
+## OpenCV
 
 Install Python-OpenCV from the Ubuntu repository by
 {% label %}command-line{% endlabel %}
@@ -21,7 +25,7 @@ Install Python-OpenCV from the Ubuntu repository by
  sudo apt-get install libopencv-dev python-opencv
  ```
  
-**2. PCL**:
+## PCL
 
 PCL can be installed through PPA
 {% label %}command-line{% endlabel %}

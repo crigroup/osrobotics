@@ -23,7 +23,6 @@
 
 * [5. System](system/introduction.md)
   * [Robot simulation in Gazebo](system/simulation.md)
-  * [Robot vision with ROS](system/vision.md)
 
 * [6. Force control](control/introduction.md)
   * [Principles of force control](control/principles.md)

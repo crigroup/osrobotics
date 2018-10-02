@@ -33,7 +33,7 @@ Now, let us consider the following task: "pick up an object from a tabletop and
 place it at another place".
 
 ![Starting and grasping
- configurations.](../assets/grasping_before_after.png)
+ configurations.](assets/grasping_before_after.png)
 
 This task can be broken down into the following steps:
 
@@ -61,3 +61,13 @@ Putting together the different steps and the different hardware components
 Some industrial applications, such as assembly, drilling, riveting, etc.,
 require to precisely control the contact force between the robot and the
 environment. This will be covered in Chapter 6 (**Force control**).
+
+## Authors
+
+This book is authored by
+[Quang-Cuong Pham](http://www.ntu.edu.sg/home/cuong/) and [Francisco
+Suárez-Ruiz](https://fsuarez6.github.io/). Many thanks to Huy Nguyen
+and Bui Xuan Hien for their contributions.
+
+Questions, suggestions, and bug reports should be addressed to
+<cuong@ntu.edu.sg>. 

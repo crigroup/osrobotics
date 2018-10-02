@@ -1,5 +1,6 @@
 {
   "language": "en",
+    "title": "Introduction to Open-Source Robotics",
   "structure": {
     "readme": "introduction.md"
   },
