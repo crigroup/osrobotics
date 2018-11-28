@@ -52,8 +52,8 @@ rospy.init_node('gazebo_pick_and_place')
 # Load the OpenRAVE environment
 env = orpy.Environment()
 if not env.Load('worlds/cubes_task.env.xml'):
- rospy.logerr('Failed to load the world. Did you run: catkin_make install?')
- exit(1)
+  rospy.logerr('Failed to load the world. Did you run: catkin_make install?')
+  exit(1)
 env.SetDefaultViewer()
 Tcamera = tr.euler_matrix(*np.deg2rad([-120, 13, 135]))
 Tcamera[:3,3] = [1, 1, 2]
@@ -75,13 +75,13 @@ IK solutions
 iktype = orpy.IkParameterization.Type.Transform6D
 success = kinematics.load_ikfast(robot, iktype)
 if not success:
- rospy.logerr('Failed to load IKFast for {0}, manipulator: {1}'.format(robot.GetName(), manipulator.GetName()))
- IPython.embed()
- exit(1)
+  rospy.logerr('Failed to load IKFast for {0}, manipulator: {1}'.format(robot.GetName(), manipulator.GetName()))
+  IPython.embed()
+  exit(1)
 statsmodel = orpy.databases.linkstatistics.LinkStatisticsModel(robot)
 if not statsmodel.load():
- rospy.loginfo('Generating LinkStatistics database. It will take around 1 minute...')
- statsmodel.autogenerate()
+  rospy.loginfo('Generating LinkStatistics database. It will take around 1 minute...')
+  statsmodel.autogenerate()
 statsmodel.setRobotWeights()
 statsmodel.setRobotResolutions(xyzdelta=0.01)
 ```

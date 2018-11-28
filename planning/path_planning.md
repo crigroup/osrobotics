@@ -96,7 +96,7 @@ implement.
 > #### Exercise::Solving a 2D motion planning problem by PRM
 >
 First, load a simple 2D environment (make sure that you have [cloned the course repository](../installation/basic_tools.md#git), and 
-changed directory to $$\texttt{~/catwin_ws/src/osr_course_pkgs/}$$. 
+changed directory to $$\texttt{~/catkin_ws/src/osr_course_pkgs/}$$. 
 >
 {% label %}python{% endlabel %}
 ```python

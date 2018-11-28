@@ -9,7 +9,7 @@ Prerequisite: Chapter 4.
 First, make sure that you have
 [cloned the course repository](../installation/basic_tools.md#git). In
 the folder
-$$\texttt{~/catwin_ws/src/osr_course_pkgs/osr_examples/vision_assignment_data}$$ 
+$$\texttt{~/catkin_ws/src/osr_course_pkgs/osr_examples/vision_assignment_data}$$ 
 you can find the following files  (n = 1, 2, 3, 4):
 - $$\texttt{take_n.ply}$$: contains the point cloud of take n;
 - $$\texttt{take_n_left.png}$$: contains the left camera image for take n;

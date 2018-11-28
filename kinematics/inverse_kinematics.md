@@ -274,7 +274,7 @@ advantages of IKFast are
 First, load the environment, the viewer and the robot (make sure that
 you have [installed OpenRAVE](../installation/motion_planning.md),
 [cloned the course repository](../installation/basic_tools.md#git), and 
-changed directory to $$\texttt{~/catwin_ws/src/osr_course_pkgs/}$$.
+changed directory to $$\texttt{~/catkin_ws/src/osr_course_pkgs/}$$.
 >
 {% label %}python{% endlabel %}
 ``` python
