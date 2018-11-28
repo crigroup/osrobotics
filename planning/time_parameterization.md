@@ -152,20 +152,16 @@ paths, there is no closed-form solution in the general case of
 second-order constraints and arbitrary paths. However, there is a very
 efficient algorithm, first proposed by Bobrow in the 1980's and later
 perfected by many others, to numerically find the optimal
-time-parameterization, see Pham (2014). An implementation of the
-algorithm can be found at <https://github.com/quangounet/TOPP>.
+time-parameterization, see Pham and Pham (2018). An implementation of the
+algorithm can be found at <https://github.com/hungpham2511/toppra>.
 
 # To learn more about this topic
 
-Hauser, K., & Ng-Thow-Hing, V. (2010). Fast smoothing of manipulator
+- Hauser, K., & Ng-Thow-Hing, V. (2010). Fast smoothing of manipulator
 trajectories using optimal bounded-acceleration shortcuts. In Robotics
 and Automation (ICRA), 2010 IEEE International Conference on (pp.
-2493-2498). IEEE.
+2493-2498).
 
-Pham, Q. C. (2014). A general, fast, and robust implementation of the
-time-optimal path parameterization algorithm. *IEEE Transactions on
-Robotics*, 30(6), 1533-1540.
-
-Lertkultanon, P., & Pham, Q. C. (2016). Time-optimal parabolic
-interpolation with velocity, acceleration, and minimum-switch-time
-constraints. *Advanced Robotics*, 30(17), 1095-1110.
+- H. Pham, Q.-C. Pham. A new approach to Time-Optimal Path
+Parameterization based on Reachability Analysis. *IEEE Transactions on
+Robotics*, vol. 34(3), pp. 645–659, 2018.

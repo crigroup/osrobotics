@@ -27,7 +27,7 @@ hardware.
 
 Examples of real-world robotics applications, developed in our research group,
 can be seen in this video:
-{% youtube %} https://www.youtube.com/watch?v=zaOy3SdvXr4 {% endyoutube %}
+{% youtube %} https://www.youtube.com/watch?v=wWK1edWS1Fs {% endyoutube %}
 
 Now, let us consider the following task: "pick up an object from a tabletop and
 place it at another place".
@@ -64,10 +64,10 @@ environment. This will be covered in Chapter 6 (**Force control**).
 
 ## Authors
 
-This book is authored by
+This book is continuously authored by
 [Quang-Cuong Pham](http://www.ntu.edu.sg/home/cuong/) and [Francisco
 Suárez-Ruiz](https://fsuarez6.github.io/). Many thanks to Huy Nguyen
 and Bui Xuan Hien for their contributions.
 
 Questions, suggestions, and bug reports should be addressed to
-<cuong@ntu.edu.sg>. 
+<cuong.pham@normalesup.org>. 

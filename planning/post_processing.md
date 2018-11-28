@@ -226,11 +226,7 @@ motion planning. *The International Journal of Robotics Research*,
 - Hauser, K., & Ng-Thow-Hing, V. (2010). Fast smoothing of manipulator
 trajectories using optimal bounded-acceleration shortcuts. In Robotics
 and Automation (ICRA), 2010 IEEE International Conference on (pp.
-2493-2498). IEEE.
+2493-2498).
 
 - Pham, Q. C. (2015). Trajectory Planning. In *Handbook of Manufacturing
 Engineering and Technology* (pp. 1873-1887). Springer London.
-
-- Lertkultanon, P., & Pham, Q. C. (2016). Time-optimal parabolic
-interpolation with velocity, acceleration, and minimum-switch-time
-constraints. *Advanced Robotics*, 30(17), 1095-1110.
