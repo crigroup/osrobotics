@@ -193,7 +193,7 @@ times = np.arange(0, traj.GetDuration(), 0.01)
 qvect = np.zeros((len(times), robot.GetActiveDOF()))
 spec = traj.GetConfigurationSpecification()
 for i in range(len(times)):
-   trajdata = traj.Sample(times[i])
+  trajdata = traj.Sample(times[i])
 qvect[i,:] = spec.ExtractJointValues(trajdata, robot, manipulator.GetArmIndices(), 0)
 ```
 >

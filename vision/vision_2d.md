@@ -36,26 +36,26 @@ determine its 3D position.
 import numpy as np
 import cv2
 def get_hole_center2d(image):
-	image_blur = cv2.blur(image, (5,5))
-	image_edges = cv2.Canny(image_blur, 60, 120)
-	(thresh, image_bw) = cv2.threshold(image_edges, 80, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
-	if image_bw is None:
-		return False, None
-	image_contours, contours, hierarchy = cv2.findContours(image_bw, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-	image_contours = cv2.cvtColor(image_contours, cv2.COLOR_GRAY2RGB)
-	for i,cnt in enumerate(contours):
-		if len(np.squeeze(cnt)) > 5:
-			rect = np.array(cv2.minAreaRect(cnt))
-			(delta_u, delta_v) = rect[1]
-			diameter_pixel = max(delta_u,delta_v)
-			circularity = delta_u/delta_v if delta_v > delta_u  else delta_v/delta_u
-			good_circularity = circularity > 0.8
-			good_diameter = diameter_pixel > 30
-			if good_circularity and good_diameter:
-				cv2.drawContours(image_contours, [cnt], 0, [0,0,255], 2)
-				cv2.imwrite('image_contours.png',image_contours)
-				return True, rect
-	return False, False
+  image_blur = cv2.blur(image, (5,5))
+  image_edges = cv2.Canny(image_blur, 60, 120)
+  (thresh, image_bw) = cv2.threshold(image_edges, 80, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+  if image_bw is None:
+    return False, None
+  image_contours, contours, hierarchy = cv2.findContours(image_bw, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+  image_contours = cv2.cvtColor(image_contours, cv2.COLOR_GRAY2RGB)
+  for i,cnt in enumerate(contours):
+    if len(np.squeeze(cnt)) > 5:
+      rect = np.array(cv2.minAreaRect(cnt))
+      (delta_u, delta_v) = rect[1]
+      diameter_pixel = max(delta_u,delta_v)
+      circularity = delta_u/delta_v if delta_v > delta_u  else delta_v/delta_u
+      good_circularity = circularity > 0.8
+      good_diameter = diameter_pixel > 30
+      if good_circularity and good_diameter:
+        cv2.drawContours(image_contours, [cnt], 0, [0,0,255], 2)
+        cv2.imwrite('image_contours.png',image_contours)
+        return True, rect
+  return False, False
 limage = cv2.imread('left_image.png', 0)
 success, lres = get_hole_center2d(limage)
 rimage = cv2.imread('right_image.png', 0)
