@@ -140,7 +140,7 @@ changed directory to $$\texttt{~/catkin_ws/src/osr_course_pkgs/}$$.
 {% label %}python{% endlabel %}
 ``` python
 import numpy as np
-import openravepy as orp
+import openravepy as orpy
 env = orpy.Environment()
 env.Load('osr_openrave/worlds/cubes_task.env.xml')
 env.SetDefaultViewer()

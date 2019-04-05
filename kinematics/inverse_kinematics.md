@@ -288,7 +288,7 @@ robot = env.GetRobot('robot')
 manipulator = robot.SetActiveManipulator('gripper')
 robot.SetActiveDOFs(manipulator.GetArmIndices())
 np.set_printoptions(precision=6, suppress=True)
-# Box to ilustrate elbow up/down
+# Box to illustrate elbow up/down
 with env:
   box = orpy.RaveCreateKinBody(env, '')
   box.SetName('box')
