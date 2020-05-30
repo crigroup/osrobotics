@@ -56,7 +56,7 @@ echo $ROS_PACKAGE_PATH
 
 This is the expected output
 ```
-/home/USERNAME/catkin_ws/src:/opt/ros/kinetic/share:/opt/ros/kinetic/stacks
+/home/USERNAME/catkin_ws/src:/opt/ros/kinetic/share
 ```
 
 ### Configure your .bashrc

@@ -2,7 +2,7 @@
 
 ## Ubuntu
 
-1. Download [Ubuntu 16.04 Desktop](https://www.ubuntu.com/download/desktop).
+1. Download [Ubuntu 16.04 Desktop](http://releases.ubuntu.com/16.04.6/).
 2. Create a Bootable Thumbdrive. You can use this
 [Universal USB installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)
 3. Shutdown your computer and put the thumbdrive in a USB slot.
