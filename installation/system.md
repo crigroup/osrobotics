@@ -94,8 +94,7 @@ rostopic echo /some_topic_name
 
 ### ROS packages installation
 For the sections where interaction with hardware components is required,
-we will simulate these components using Gazebo. More details can be found in
-the [ROS architecture section](../system/architecture.md).
+we will simulate these components using Gazebo.
 
 ### ROS packages from source
 
