@@ -117,7 +117,7 @@ wstool update
 Install any missing dependencies using `rosdep`
 {% label %}command-line{% endlabel %}
 ```bash
-rosdep update
+rosdep update --include-eol-distros
 rosdep install --from-paths . --ignore-src -r -y
 ```
 
